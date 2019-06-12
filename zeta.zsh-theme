@@ -1,6 +1,7 @@
 # Zeta theme for oh-my-zsh
 # Tested on Linux, Unix and Windows under ANSI colors.
 # Copyright: Skyler Lee, 2015
+# Modified: Candice Thomas, 2019
 
 # Colors: black|red|blue|green|yellow|magenta|cyan|white
 local black=$fg[black]
@@ -23,7 +24,7 @@ local white_bold=$fg_bold[white]
 
 local highlight_bg=$bg[red]
 
-local zeta='ζ'
+local zeta='~'
 
 # Machine name.
 function get_box_name {
@@ -63,7 +64,7 @@ ZSH_THEME_GIT_PROMPT_UNMERGED="%{$cyan_bold%}="
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$yellow_bold%}?"
 
 # Git sha.
-ZSH_THEME_GIT_PROMPT_SHA_BEFORE="[%{$yellow%}"
+ZSH_THEME_GIT_PROMPT_SHA_BEFORE="[%{$magenta%}"
 ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%}]"
 
 function get_git_prompt {
@@ -102,7 +103,7 @@ function print_prompt_head {
 %{$green_bold%}$(get_usr_name)\
 %{$blue%}@\
 %{$cyan_bold%}$(get_box_name): \
-%{$yellow_bold%}$(get_current_dir)%{$reset_color%}\
+%{$magenta%}$(get_current_dir)%{$reset_color%}\
 $(get_git_prompt) "
     local right_prompt="%{$blue%}($(get_time_stamp))%{$reset_color%} "
     print -rP "$left_prompt$(get_space $left_prompt $right_prompt)$right_prompt"
